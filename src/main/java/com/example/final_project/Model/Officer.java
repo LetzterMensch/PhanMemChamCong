@@ -48,7 +48,7 @@ public class Officer extends Employee {
         String totalMorningSessionQuery = "select count(morningSession) from attendance where uid = ?";
         String totalAfternoonSessionQuery = "select count(afternoonSession) from attendance where uid = ?";
         String hoursLateQuery = "select sum(hoursLate) from attendance where uid = ?";
-        String hoursEarlyLeaveQuery = "select count(hoursEarlyLeave) from attendance where uid = ?";
+        String hoursEarlyLeaveQuery = "select sum(hoursEarlyLeave) from attendance where uid = ?";
         ResultSet rs = super.jdbc.view(totalMorningSessionQuery, new String[]{UID});
         rs.next();
         this.totalMorningSession = rs.getInt(1);
