@@ -16,7 +16,7 @@ import static com.example.final_project.databaseHandler.database.connectDb;
 public class Request extends ResourceBundle {
     @FXML
     private Button Btn;
-    private int id;
+    private int id; // request id
     private String name;
     private String UID;
     private String workingDepartment;

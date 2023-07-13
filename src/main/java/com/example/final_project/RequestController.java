@@ -47,9 +47,6 @@ public class RequestController implements Initializable {
     private Button acceptBtn;
 
     @FXML
-    private Button closeBtn;
-
-    @FXML
     private TextField created_date;
 
     @FXML

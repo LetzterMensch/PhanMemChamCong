@@ -93,7 +93,7 @@
                </image>
             </ImageView>
             <Button fx:id="attendanceReportBtn" defaultButton="true" layoutX="451.0" layoutY="293.0" mnemonicParsing="false" text="Xem báo cáo chấm công" />
-            <Button fx:id="viewAllBtn" defaultButton="true" layoutX="35.0" layoutY="293.0" mnemonicParsing="false" text="Xem thông tin tổng hợp" />
+            <Button fx:id="viewAllBtn" defaultButton="true" layoutX="35.0" layoutY="293.0" mnemonicParsing="false" onAction="#viewGeneralInfoWindow" text="Xem thông tin tổng hợp" />
             <Button fx:id="employeesAttBtn" defaultButton="true" layoutX="231.0" layoutY="293.0" mnemonicParsing="false" text="Xem chấm công của nhân viên" />
             <Button fx:id="editBtn" defaultButton="true" layoutX="393.0" layoutY="129.0" mnemonicParsing="false" onAction="#editWindow" text="Sửa thông tin chấm công" />
             <ImageView fitHeight="81.0" fitWidth="155.0" layoutX="421.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">

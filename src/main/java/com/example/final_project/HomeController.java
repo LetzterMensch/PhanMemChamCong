@@ -53,6 +53,25 @@ public class HomeController {
     private Button viewAllBtn;
 
     @FXML
+    void viewGeneralInfoWindow() throws IOException, SQLException{
+        this.editBtn.getScene().getWindow().hide();
+        Parent root = null;
+        root = FXMLLoader.load((Objects.requireNonNull(this.getClass().getResource("general_information.fxml"))));
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+        root.setOnMousePressed((event) -> {
+            this.x = event.getSceneX();
+            this.y = event.getSceneY();
+        });
+        root.setOnMouseDragged((event) -> {
+            stage.setX(event.getScreenX() - this.x);
+            stage.setY(event.getScreenY() - this.y);
+        });
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
     void editWindow() throws IOException, SQLException {
         String sql = "SELECT * FROM requests WHERE status = ? or status = ?";
         ResultSet result = jdbc.view(sql,new String[]{"pending","accepted"});
