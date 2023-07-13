@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.final_project.SaveEditOfficerController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <SplitPane dividerPositions="0.25066785396260016, 0.651380231522707" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+        <AnchorPane>
+          <children>
+                  <ScrollPane layoutX="14.0" layoutY="50.0" prefHeight="486.0" prefWidth="200.0">
+                     <content>
+                        <TableView fx:id="request_list" prefHeight="481.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="rq_date" prefWidth="199.20000058412552" text="Yêu cầu chỉnh sửa" />
+                          </columns>
+                        </TableView>
+                     </content>
+                  </ScrollPane>
+          </children>
+        </AnchorPane>
+            <AnchorPane prefHeight="551.0" prefWidth="358.0">
+               <children>
+                  <Label layoutX="25.0" layoutY="32.0" text="Tên nhân viên">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="65.0" text="Mã nhân viên">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="name_form" disable="true" layoutX="132.0" layoutY="28.0" />
+                  <TextField fx:id="uid_form" disable="true" layoutX="132.0" layoutY="61.0" />
+                  <Label layoutX="25.0" layoutY="103.0" text="Bộ phận công tác">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="working_department_form" disable="true" layoutX="132.0" layoutY="99.0" />
+                  <Label layoutX="25.0" layoutY="145.0" text="Chức vụ">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="position_form" disable="true" layoutX="132.0" layoutY="141.0" />
+                  <Label layoutX="25.0" layoutY="181.0" text="Ngày chỉnh sửa">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="date_form" disable="true" layoutX="132.0" layoutY="177.0" />
+                  <Separator layoutX="-2.0" layoutY="221.0" prefHeight="18.0" prefWidth="354.0" />
+                  <Label layoutX="30.0" layoutY="276.0" text="Ngày">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="30.0" layoutY="309.0" text="Sáng&#10;(morning session)">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="30.0" layoutY="353.0" text="Chiều&#10;(afternoon session)&#10;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="30.0" layoutY="401.0" text="Đi muộn&#10;(hoursLate)">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="30.0" layoutY="446.0" text="Về sớm&#10;(hoursEarlyLeave)">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="date_edit" disable="true" layoutX="146.0" layoutY="272.0" text="Thứ 6 12/5/2023" />
+                  <TextField fx:id="morning_session" layoutX="146.0" layoutY="313.0" text="Có" />
+                  <TextField fx:id="afternoon_session" layoutX="146.0" layoutY="353.0" text="Không" />
+                  <TextField fx:id="hoursLate" layoutX="146.0" layoutY="401.0" text="0" />
+                  <TextField fx:id="hoursEarlyLeave" layoutX="146.0" layoutY="450.0" text="0.1" />
+                  <Button fx:id="saveBtn" defaultButton="true" layoutX="146.0" layoutY="499.0" mnemonicParsing="false" onAction="#save" text="Lưu chỉnh sửa" />
+               </children>
+            </AnchorPane>
+            <AnchorPane minWidth="298.0" prefHeight="551.0" prefWidth="298.0">
+               <children>
+            <AnchorPane id="Content" layoutX="-14.0" minHeight="-1.0" minWidth="-1.0" prefHeight="551.0" prefWidth="327.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-14.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <Label alignment="CENTER" layoutX="27.0" layoutY="28.0" style="&#10;" text="Chi tiết yêu cầu" textAlignment="CENTER" wrapText="false">
+                           <font>
+                      <Font size="18.0" fx:id="x1" />
+                           </font></Label>
+                        <Label layoutX="27.0" layoutY="68.0" text="Ngày tạo yêu cầu">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="27.0" layoutY="99.0" text="Người yêu cầu">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="27.0" layoutY="135.0" text="Mã nhân viên">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="27.0" layoutY="206.0" text="Ngày yêu cầu chỉnh sửa">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="27.0" layoutY="170.0" text="Bộ phận công tác">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="27.0" layoutY="238.0" text="Lý do">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="27.0" layoutY="357.0" text="Minh chứng ">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="reason_rq" layoutX="64.0" layoutY="247.0" prefHeight="110.0" prefWidth="257.0" text="[Lý do xin chỉnh sửa yêu cầu]" />
+                        <TextField fx:id="created_at_rq" disable="true" layoutX="167.0" layoutY="64.0" />
+                        <TextField fx:id="name_rq" disable="true" layoutX="167.0" layoutY="95.0" />
+                        <TextField fx:id="uid_rq" disable="true" layoutX="167.0" layoutY="131.0" />
+                        <TextField fx:id="working_department_rq" disable="true" layoutX="167.0" layoutY="166.0" />
+                        <TextField fx:id="date_rq" disable="true" layoutX="167.0" layoutY="202.0" />
+                        <ImageView fx:id="proof_rq" fitHeight="113.0" fitWidth="236.0" layoutX="109.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/No-Image-Placeholder.svg.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="closeBtn" layoutX="289.0" layoutY="1.0" mnemonicParsing="false" onAction="#close" text="X">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+              </children>
+            </AnchorPane>
+               </children>
+            </AnchorPane>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left status" HBox.hgrow="ALWAYS">
+          <font>
+            <Font size="11.0" fx:id="x3" />
+          </font>
+          <textFill>
+            <Color red="0.625" green="0.625" blue="0.625" fx:id="x4" />
+          </textFill>
+        </Label>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+        <Label font="$x3" maxWidth="-1.0" text="Right status" textFill="$x4" HBox.hgrow="NEVER" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>
