@@ -29,6 +29,9 @@ public class JDBCSingleton {
     }
 
     // to get the connection from methods like insert, view etc.
+    //Make sure to
+    // listen to your database at port 3306
+    //  Create "isd_2022" database with username = "root" and no password
     private static Connection getConnection() throws ClassNotFoundException, SQLException {
 
         Connection con = null;
