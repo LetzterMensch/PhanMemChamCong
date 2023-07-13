@@ -5,4 +5,7 @@
   - database : isd_2022
   - port : 3306
   - user : root
-  - password : 
+  - password :
+- Tài khoản đăng nhập :
+    - (HR) Tài khoản : 1
+    - MK : 123
