@@ -3,6 +3,7 @@ package com.example.final_project;
 import com.example.final_project.Model.GeneralInfo;
 import com.example.final_project.Model.Officer;
 import com.example.final_project.Model.Request;
+import com.example.final_project.Model.User;
 import com.example.final_project.databaseHandler.JDBCSingleton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -186,7 +187,7 @@ public class MakeRequestController implements Initializable {
         alert.setContentText("Send a request successfully !");
         alert.showAndWait();
         this.saveBtn.getScene().getWindow().hide();
-        Parent root = (Parent) FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("employeeHome.fxml")));
+        Parent root = (Parent) FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("employeeHome.fxml")), new User(this.uid));
         Stage stage = new Stage();
         Scene scene = new Scene(root);
         root.setOnMousePressed((event) -> {

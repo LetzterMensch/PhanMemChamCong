@@ -124,7 +124,9 @@ public class EmployeeHomeController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.uid = (String) resourceBundle.getObject("id");
+        if(resourceBundle != null){
+            this.uid = (String) resourceBundle.getObject("id");
+        }
         System.out.println(this.uid);
     }
 }

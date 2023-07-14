@@ -1,6 +1,5 @@
 package com.example.final_project;
 
-import com.almasb.fxgl.app.scene.LoadingScene;
 import com.example.final_project.Model.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,13 +15,11 @@ import javafx.stage.StageStyle;
 import static com.example.final_project.databaseHandler.database.connectDb;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Objects;
-import java.util.ResourceBundle;
 
-public class Login {
+public class LoginController {
     private String role;
     @FXML
     private TextField id;
