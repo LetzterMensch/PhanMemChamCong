@@ -230,7 +230,13 @@ public class SaveEditOfficerController implements Initializable {
         this.uid_rq.setText(request1.getUID());
         this.working_department_rq.setText(request1.getWorkingDepartment());
         this.reason_rq.setText(request1.getReason());
-        String uri = "file:" + request1.getProofURL();
+        String uri;
+        if(!request1.getProofURL().contains("file")){
+            uri = "file:" + request1.getProofURL();
+        }
+        else {
+            uri = request1.getProofURL();
+        }
         this.proof_rq.setImage(new Image(uri, 101.0, 127.0, false, true));
     }
 

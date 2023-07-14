@@ -56,6 +56,7 @@ public class JDBCSingleton {
             for (int i = 0; i < args.length; i++) {
                 ps.setString(i + 1, args[i]);
             }
+            System.out.println(ps);
             recordCounter = ps.executeUpdate();
 
         } catch (Exception e) {

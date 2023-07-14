@@ -231,7 +231,13 @@ public class RequestController implements Initializable {
             this.uid.setText(request1.getUID());
             this.working_department.setText(request1.getWorkingDepartment());
             this.reason.setText(request1.getReason());
-            String uri = "file:" + request1.getProofURL();
+            String uri;
+            if(!request1.getProofURL().contains("file")){
+                uri = "file:" + request1.getProofURL();
+            }
+            else {
+                uri = request1.getProofURL();
+            }
             this.proof.setImage(new Image(uri, 101.0, 127.0, false, true));
         }
     }

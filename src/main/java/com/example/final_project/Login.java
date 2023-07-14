@@ -1,6 +1,7 @@
 package com.example.final_project;
 
 import com.almasb.fxgl.app.scene.LoadingScene;
+import com.example.final_project.Model.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,6 +20,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
 public class Login {
     private String role;
@@ -71,6 +73,28 @@ public class Login {
                             stage.setY(event.getScreenY() - this.y);
                         });
                         stage.initStyle(StageStyle.TRANSPARENT);
+                        stage.setScene(scene);
+                        stage.show();
+                    } else if (Objects.equals(result.getString(1), "O") || Objects.equals(result.getString(1), "W")) {
+                        alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Information Message");
+                        alert.setHeaderText((String) null);
+                        alert.setContentText("Successfully Login as an Employee");
+                        alert.showAndWait();
+                        this.loginBtn.getScene().getWindow().hide();
+                        Parent root = (Parent) FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("employeeHome.fxml")),new User(this.id.getText()));
+                        Stage stage = new Stage();
+                        Scene scene = new Scene(root);
+                        root.setOnMousePressed((event) -> {
+                            this.x = event.getSceneX();
+                            this.y = event.getSceneY();
+                        });
+                        root.setOnMouseDragged((event) -> {
+                            stage.setX(event.getScreenX() - this.x);
+                            stage.setY(event.getScreenY() - this.y);
+                        });
+                        stage.initStyle(StageStyle.TRANSPARENT);
+                        stage.setUserData(this.id.getText());
                         stage.setScene(scene);
                         stage.show();
                     }

@@ -6,8 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Officer extends Employee {
-    private float hoursLate;
-    private float hoursEarlyLeave;
+    private float hoursLate; //total
+    private float hoursEarlyLeave; //total
+    private float hoursLateADay;
+    private float hoursEarlyLeaveADay;
+    private float morningSession;
+    private float afternoonSession;
     private int totalMorningSession;
     private int totalAfternoonSession;
 
